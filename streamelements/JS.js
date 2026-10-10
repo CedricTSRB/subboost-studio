@@ -50,7 +50,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
   config.subsTarget = Math.max(1, number(config.subsTarget, 50));
   config.followersTarget = Math.max(1, number(config.followersTarget, 200));
   const container = $('sb-widget');
-  const style = ['neon', 'glass', 'fill', 'sharp', 'outline', 'image'].includes(config.style) ? config.style : 'glass';
+  const style = ['neon', 'glass', 'fill', 'sharp', 'outline', 'transparent', 'image'].includes(config.style) ? config.style : 'glass';
   container.className = 'style-' + style;
   container.style.setProperty('--accent', /^#[a-f\d]{6}$/i.test(config.accent) ? config.accent : '#7863ee');
   $('sb-title').textContent = String(config.title || 'STREAM GOALS').slice(0, 32);
