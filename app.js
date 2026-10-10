@@ -1,4 +1,4 @@
-/* SubBoost Studio. 100% statische Client-App; keine Twitch-Verbindung im Dashboard. */
+/* Goal Overlays. 100% statische Client-App; keine Twitch-Verbindung im Dashboard. */
 (() => {
   'use strict';
   const KEY='subboost-studio-v1';
