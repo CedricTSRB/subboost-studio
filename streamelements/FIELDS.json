@@ -1,5 +1,5 @@
 {
-  "widgetName": {"type":"hidden","value":"SubBoost Live Goals"},
+  "widgetName": {"type":"hidden","value":"Goal Overlays Live Goals"},
   "title": {"type":"text","label":"Titel","value":"STREAM GOALS","group":"Design"},
   "style": {"type":"dropdown","label":"Design-Stil","value":"glass","options":{"neon":"Neon","glass":"Glas","fill":"Fill","sharp":"Sharp","outline":"Outline","transparent":"Transparent","image":"Eigenes Bild"},"group":"Design"},
   "accent": {"type":"colorpicker","label":"Akzentfarbe","value":"#7863ee","group":"Design"},
