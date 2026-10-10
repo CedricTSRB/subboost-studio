@@ -1,4 +1,4 @@
-# SubBoost Studio – komplett neue Version
+# Goal Overlays – Twitch Overlay Designer
 
 Ein eigenständiger, kostenlos hostbarer Webseiten-Prototyp für Twitch-Overlay-Gestaltung. Keine Base44-Abhängigkeit. Alle Dateien selbst bearbeiten.
 
@@ -19,11 +19,11 @@ Die GitHub-Pages-Webseite ist **statisch**. Sie zeigt manuell eingestellte Testw
 **Echte Twitch-Follows und Subs** sind über das separate **StreamElements-Custom-Widget** vorgesehen; dafür muss StreamElements mit Twitch verbunden und der Code einmal ins Custom Widget eingefügt werden. Dieses Widget übernimmt seine Zielwerte aus StreamElements-Feldern, nicht aus den GitHub-Pages-Einstellungen. Es ist vorbereitet, aber ohne echten Kanal noch nicht live getestet.
 
 ## Webseite kostenlos auf GitHub Pages veröffentlichen
-1. Das bereits angelegte **öffentliche Repository** `subbooststudio` öffnen.
+1. Das bereits angelegte **öffentliche Repository** `CedricTSRB/subboost-studio` öffnen.
 2. Im Repository **Add file → Upload files** wählen. Das ZIP-Paket zuerst entpacken und die Dateien `index.html`, `styles.css`, `app.js`, `README.md` sowie den Ordner `streamelements` **direkt in das Stammverzeichnis** hochladen (nicht den äußeren Ordner `SubBoost-GitHub-Upload`). Änderungen mit **Commit changes** speichern.
 3. Im Repository auf **Settings → Pages → Build and deployment → Deploy from a branch** gehen. Branch `main`, Ordner `/(root)` wählen und **Save** drücken.
-4. Die Seite ist anschließend unter `https://DEIN-GITHUB-NAME.github.io/subbooststudio/` erreichbar, sofern das Repository genau so heißt. (Gegebenenfalls muss GitHub Pages erst bereitgestellt werden.)
-5. SubBoost auf der veröffentlichten Seite öffnen, Design auswählen, Ziele einstellen und OBS-Links kopieren. Falls die Seite noch nicht erreichbar ist, die Veröffentlichung unter **Actions** bzw. **Settings → Pages** prüfen. In OBS **Quellen → + → Browser → URL einfügen**.
+4. Die Seite ist anschließend unter `https://cedrictsrb.github.io/subboost-studio/` erreichbar, sofern das Repository genau so heißt. (Gegebenenfalls muss GitHub Pages erst bereitgestellt werden.)
+5. Goal Overlays auf der veröffentlichten Seite öffnen, Design auswählen, Ziele einstellen und OBS-Links kopieren. Falls die Seite noch nicht erreichbar ist, die Veröffentlichung unter **Actions** bzw. **Settings → Pages** prüfen. In OBS **Quellen → + → Browser → URL einfügen**.
 
 Wichtig: GitHub Pages ist öffentlich. Niemals Twitch-/StreamElements-API-Tokens oder andere geheime Zugangsdaten in dieses Repository hochladen.
 
@@ -45,4 +45,4 @@ Technische Referenzen:
 - https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
 ## Lokal benutzen
-`index.html` per Doppelklick im Browser öffnen. Der Download `SubBoost-Demo.html` enthält die komplette lokale Vorschau als Einzeldatei. Für verlässlich nutzbare OBS-Links bitte erst auf GitHub Pages veröffentlichen.
+`index.html` per Doppelklick im Browser öffnen. Für verlässlich nutzbare OBS-Links bitte erst auf GitHub Pages veröffentlichen.
