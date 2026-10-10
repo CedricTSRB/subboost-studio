@@ -3,7 +3,7 @@
   'use strict';
   const KEY='subboost-studio-v1';
   const kinds=['subs','followers','timer'];
-  const choices=['neon','glass','fill','sharp','outline','image'];
+  const choices=['neon','glass','fill','sharp','outline','transparent','image'];
   const labels={subs:'Abo-Ziel',followers:'Follower-Ziel',timer:'Stream-Timer'};
   const createWidgets=()=>Object.fromEntries(kinds.map(kind=>[kind,{style:'neon',accent:'#7863ee',title:'STREAM GOALS',bgUrl:'',bgData:''}]));
   const defaultState={style:'neon',accent:'#7863ee',title:'STREAM GOALS',subs:24,subsTarget:50,followers:128,followersTarget:200,durationMs:43200000,remainingMs:43200000,running:false,startedAt:null,bgUrl:'',bgData:'',selectedWidget:'subs',widgets:createWidgets()};
