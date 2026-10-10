@@ -7,6 +7,58 @@
   <meta name="description" content="SubBoost Studio – professionelle Twitch-Overlay-Gestaltung für Abo-Ziele, Follower-Ziele und Stream-Timer.">
   <title>SubBoost Studio · Overlay Designer</title>
   <link rel="stylesheet" href="styles.css">
+<style id="subboost-dashboard-theme">
+/* Dark Mode only changes the studio interface; the Twitch/OBS overlay keeps its own appearance. */
+:root[data-theme="dark"]{color-scheme:dark;color:#e9edff;background:#0e1422}
+:root[data-theme="dark"] body{background:#0e1422;color:#e9edff}
+:root[data-theme="dark"] .sidebar{background:#111a2a;border-color:#29364b}
+:root[data-theme="dark"] .brand small,:root[data-theme="dark"] .nav-caption,:root[data-theme="dark"] .side-foot,:root[data-theme="dark"] .side-foot span{color:#929fba}
+:root[data-theme="dark"] .nav-link{color:#aebbd0}
+:root[data-theme="dark"] .nav-link.active,:root[data-theme="dark"] .nav-link:hover{background:#292844;color:#bcaaff}
+:root[data-theme="dark"] .status-card{background:#1a2538;border-color:#354059}
+:root[data-theme="dark"] .status-card small{color:#a3aec2}
+:root[data-theme="dark"] .topbar{background:rgba(17,26,42,.95);border-color:#2c3850}
+:root[data-theme="dark"] .crumb{color:#9aa9c0}
+:root[data-theme="dark"] .crumb strong{color:#e7ebf5}
+:root[data-theme="dark"] .slash{color:#68758a}
+:root[data-theme="dark"] .autosaved{color:#a1aec2}
+:root[data-theme="dark"] .page-heading p,:root[data-theme="dark"] .card-head p{color:#aab7ce}
+:root[data-theme="dark"] .header-badge,:root[data-theme="dark"] .pill{background:#30274d;border-color:#584574;color:#c2b4ff}
+:root[data-theme="dark"] .summary,:root[data-theme="dark"] .card{background:#172235;border-color:#2d3b51;box-shadow:0 5px 22px #05091840}
+:root[data-theme="dark"] .integration{background:linear-gradient(115deg,#172235,#1b2139)}
+:root[data-theme="dark"] .summary-tag,:root[data-theme="dark"] .summary-sub,:root[data-theme="dark"] .summary-value span{color:#abb8cc}
+:root[data-theme="dark"] .summary-line{background:#2d334b}
+:root[data-theme="dark"] .violet{background:#332b55;color:#b99aff}
+:root[data-theme="dark"] .blue{background:#1d3556;color:#9cc8ff}
+:root[data-theme="dark"] .green{background:#1e403a;color:#8fe4bc}
+:root[data-theme="dark"] .style-tile{background:#1b293e;border-color:#35435b;color:#e4eaf7}
+:root[data-theme="dark"] .style-tile.selected{border-color:#9a88ff;box-shadow:0 0 0 2px #504379}
+:root[data-theme="dark"] .style-desc,:root[data-theme="dark"] .field-label span,:root[data-theme="dark"] .hint{color:#a5b3c9}
+:root[data-theme="dark"] .field-label,:root[data-theme="dark"] .settings-label small,:root[data-theme="dark"] .setting-inputs label{color:#afbbd0}
+:root[data-theme="dark"] input:not([type=color]):not([type=file]){background:#101a2d;color:#eff2ff;border-color:#3a4961}
+:root[data-theme="dark"] input:not([type=color]):not([type=file])::placeholder{color:#8291ae}
+:root[data-theme="dark"] .color-input{background:#101a2d;border-color:#3a4961}
+:root[data-theme="dark"] .color-input span{color:#c4cbde}
+:root[data-theme="dark"] .upload-label{background:#24243e;color:#c4b3ff;border-color:#65528c}
+:root[data-theme="dark"] .btn-outline,:root[data-theme="dark"] .icon-btn{background:#243149;color:#e4eafa;border-color:#3e4d65}
+:root[data-theme="dark"] .btn-dark{background:#795fe2;color:#fff}
+:root[data-theme="dark"] .increment{background:#30264d;color:#c9b6ff;border-color:#5a4b77}
+:root[data-theme="dark"] .divider{background:#2e3b51}
+:root[data-theme="dark"] .preset{background:#1d2b40;color:#abb9ce;border-color:#3d4b61}
+:root[data-theme="dark"] .preset.active{background:#382953;color:#d0bcff;border-color:#8b71d9}
+:root[data-theme="dark"] .custom-hours{color:#aab9ce}
+:root[data-theme="dark"] .preview-stage{background:#182133;border-color:#344158}
+:root[data-theme="dark"] .stage-top,:root[data-theme="dark"] .stage-bottom,:root[data-theme="dark"] .preview-footer>div{color:#aebbd0}
+:root[data-theme="dark"] .stage-bottom{border-color:#344158}
+:root[data-theme="dark"] .preview-inner{background-color:#1b2535;background-image:linear-gradient(45deg,#293548 25%,transparent 25%),linear-gradient(-45deg,#293548 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#293548 75%),linear-gradient(-45deg,transparent 75%,#293548 75%)}
+:root[data-theme="dark"] .live-pill{background:#352e51;color:#d0c2ff}
+:root[data-theme="dark"] .integration p,:root[data-theme="dark"] .integration-note{color:#a6b5cc}
+:root[data-theme="dark"] .integration-note strong{color:#dce5f4}
+:root[data-theme="dark"] footer{color:#96a5bf}
+#theme-toggle{display:inline-flex;gap:7px;align-items:center;justify-content:center}
+@media(max-width:840px){.top-actions{gap:8px}#theme-toggle{padding:8px 10px}}
+@media(max-width:550px){#theme-toggle .theme-label{display:none}#theme-toggle{min-width:36px}}
+</style>
 </head>
 <body>
 <div id="app-shell">
@@ -26,7 +78,7 @@
   </aside>
 
   <main class="main" id="studio">
-    <header class="topbar"><div class="crumb"><span>Workspace</span><span class="slash">/</span><strong>Overlay Studio</strong></div><div class="top-actions"><span class="autosaved"><span class="save-dot"></span> Einstellungen lokal gespeichert</span><button class="btn btn-small btn-outline" id="reset-all">Zurücksetzen</button></div></header>
+    <header class="topbar"><div class="crumb"><span>Workspace</span><span class="slash">/</span><strong>Overlay Studio</strong></div><div class="top-actions"><span class="autosaved"><span class="save-dot"></span> Einstellungen lokal gespeichert</span><button class="btn btn-small btn-outline" type="button" id="theme-toggle" aria-pressed="false" aria-label="Dunklen Modus aktivieren" title="Dunklen Modus aktivieren"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dunkel</span></button><button class="btn btn-small btn-outline" id="reset-all">Zurücksetzen</button></div></header>
     <div class="page">
       <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CREATOR TOOLS <span class="eyebrow-sep">/</span> DESIGN STUDIO</div><h1>Dein Stream. <em>Dein Design.</em></h1><p>Gestalte deine Goals, wähle einen Stil und sieh dein Overlay direkt in der Vorschau.</p></div><div class="header-badge"><span>✦</span> Neues Studio-Design</div></div>
 
@@ -62,5 +114,32 @@
 <div id="obs-overlay-root" class="obs-root" hidden><div class="obs-content" id="obs-content"></div><div class="obs-interact" id="obs-interact"><button type="button" id="obs-start-pause">▶ Start / Pause</button><button type="button" id="obs-reset">↺ Reset</button></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>
+<script id="subboost-theme-controller">
+(()=>{
+  if(new URLSearchParams(location.search).has('overlay'))return;
+  const key='subboost-studio-ui-theme';
+  const button=document.getElementById('theme-toggle');
+  if(!button)return;
+  function apply(mode){
+    const dark=mode==='dark';
+    document.documentElement.dataset.theme=dark?'dark':'light';
+    button.setAttribute('aria-pressed',String(dark));
+    button.setAttribute('aria-label',dark?'Hellen Modus aktivieren':'Dunklen Modus aktivieren');
+    button.setAttribute('title',dark?'Hellen Modus aktivieren':'Dunklen Modus aktivieren');
+    button.querySelector('.theme-icon').textContent=dark?'☀':'☾';
+    button.querySelector('.theme-label').textContent=dark?'Hell':'Dunkel';
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta)meta.setAttribute('content',dark?'#0e1422':'#f6f7fb');
+  }
+  let saved='light';
+  try{saved=localStorage.getItem(key)==='dark'?'dark':'light'}catch(_){}
+  apply(saved);
+  button.addEventListener('click',()=>{
+    const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+    apply(next);
+    try{localStorage.setItem(key,next)}catch(_){}
+  });
+})();
+</script>
 </body>
 </html>
