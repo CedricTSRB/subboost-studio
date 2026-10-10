@@ -4,3 +4,27 @@ body.obs-mode{background:transparent!important;overflow:hidden}body.obs-mode #ap
 @media(max-width:1240px){.sidebar{width:206px}.main{width:calc(100% - 206px)}.page{padding:35px 27px}.topbar{padding:0 27px}.studio-grid{grid-template-columns:1fr}.styles-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.style-art{height:80px}.preview-inner{min-height:340px}.integration{align-items:flex-start}}@media(max-width:840px){.sidebar{display:none}.main{width:100%}.topbar{padding:0 17px}.page{padding:25px 16px}.header-badge,.autosaved{display:none}.styles-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.summary-grid{gap:9px}.summary{padding:16px 13px}.summary-value{font-size:24px}.summary-value span{font-size:11px}.summary-icon{width:30px;height:30px}.summary-tag{font-size:8px}.summary-sub{font-size:9px}.integration{flex-direction:column}.integration-actions{width:100%}}@media(max-width:550px){.summary-grid{grid-template-columns:1fr}.summary{padding:14px}.summary-value{margin-top:8px}.summary-line{margin-top:10px}.styles-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-heading{margin-bottom:21px}.card{padding:17px}.setting-inputs label{width:58px}.setting-inputs input{font-size:11px!important}.preview-footer{align-items:stretch;flex-direction:column}.preview-footer>div{max-width:100%}.preview-inner{padding:12px;min-height:290px}.goal-card{padding:13px}.colors-row{grid-template-columns:1fr}.settings-row{gap:10px}.timer-card strong{font-size:19px}.topbar{height:60px}footer{font-size:9px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 /* Invisible editor preview is cloned in OBS mode; only the clone is shown. */
 .obs-root[data-view="subs"] .followers-card,.obs-root[data-view="subs"] .timer-card,.obs-root[data-view="subs"] .preview-heading,.obs-root[data-view="followers"] .subs-card,.obs-root[data-view="followers"] .timer-card,.obs-root[data-view="followers"] .preview-heading,.obs-root[data-view="timer"] .subs-card,.obs-root[data-view="timer"] .followers-card,.obs-root[data-view="timer"] .preview-heading{display:none}
+
+/* Transparent overlay preset: checkerboard only in the selection thumbnail. */
+.art-transparent{color:#ffffff;background-color:#4e596b;background-image:linear-gradient(45deg,#677286 25%,transparent 25%),linear-gradient(-45deg,#677286 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#677286 75%),linear-gradient(-45deg,transparent 75%,#677286 75%);background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0}
+.art-transparent strong,.art-transparent small{position:relative;text-shadow:0 1px 5px #000,0 0 8px #000a}
+.art-transparent b{position:relative;background:linear-gradient(90deg,#b09aff 70%,#050b1699 70%);box-shadow:0 0 8px #04091399}
+/* Actual widgets have no visible panel. Only text and progress remain visible. */
+.overlay-content.style-transparent .goal-card,
+.overlay-content.mixed-mode .goal-card.style-transparent{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;border-radius:0!important;padding:9px 3px!important;color:#fff}
+.overlay-content.style-transparent .goal-top,
+.overlay-content.style-transparent .timer-label,
+.overlay-content.style-transparent .timer-card strong,
+.overlay-content.style-transparent .timer-subline,
+.overlay-content.mixed-mode .goal-card.style-transparent .goal-top,
+.overlay-content.mixed-mode .goal-card.style-transparent .timer-label,
+.overlay-content.mixed-mode .goal-card.style-transparent .timer-card strong,
+.overlay-content.mixed-mode .goal-card.style-transparent .timer-subline{text-shadow:0 1px 3px #000,0 2px 9px #000c}
+.overlay-content.style-transparent .goal-top small,
+.overlay-content.mixed-mode .goal-card.style-transparent .goal-top small{color:#e6e9ff}
+.overlay-content.style-transparent .timer-subline,
+.overlay-content.mixed-mode .goal-card.style-transparent .timer-subline{color:#d7ddf1}
+.overlay-content.style-transparent .bar,
+.overlay-content.mixed-mode .goal-card.style-transparent .bar{background:#02061487;border:1px solid #ffffff50;height:9px;box-shadow:0 2px 7px #0008}
+.overlay-content.style-transparent .bar-fill,
+.overlay-content.mixed-mode .goal-card.style-transparent .bar-fill{background:var(--accent);box-shadow:0 0 11px var(--accent)}
