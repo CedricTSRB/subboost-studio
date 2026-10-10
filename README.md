@@ -4,7 +4,7 @@ Ein eigenständiger, kostenlos hostbarer Webseiten-Prototyp für Twitch-Overlay-
 
 ## Bereits eingebaut
 - Professionelles responsives Dashboard ohne Neon als Standard-Oberfläche
-- Sechs verschiedene Overlay-Designs: Neon, Glas, Fill, Sharp, Outline, Eigenes Bild
+- Sieben verschiedene Overlay-Designs: Neon, Glas, Fill, Sharp, Outline, Transparent, Eigenes Bild
 - Live-Vorschau, unabhängige Akzentfarbe, eigener Titel, Bildhintergrund
 - Getrennte Abo- und Follower-Ziele mit aufwärts laufenden Zählern
 - Test-Buttons für neue Follows und Subs (kein Twitch-Zugriff erforderlich)
