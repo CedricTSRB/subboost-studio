@@ -69,6 +69,7 @@
       <a href="#studio" class="nav-link active" data-nav="studio"><span class="nav-ico">▦</span> Overlay Studio</a>
       <a href="#designs" class="nav-link" data-nav="designs"><span class="nav-ico">◈</span> Design-Bibliothek</a>
       <a href="#goals" class="nav-link" data-nav="goals"><span class="nav-ico">◫</span> Goals & Timer</a>
+      <a href="#single-widgets" class="nav-link" data-nav="single-widgets"><span class="nav-ico">◇</span> Einzel-Widgets</a>
       <a href="#integration" class="nav-link" data-nav="integration"><span class="nav-ico">⇄</span> OBS & Integration</a>
     </nav>
     <div class="side-bottom">
@@ -106,7 +107,29 @@
         <section class="card controls-card" id="goals"><div class="card-head tight"><div><span class="section-index">03 / GOALS & TIMER</span><h2>Ziele einstellen</h2><p>Teste neue Subs und Follows direkt im Studio.</p></div></div><div class="goals-settings"><div class="settings-row"><div class="settings-label"><span class="settings-icon violet">✧</span><div><strong>Abo-Ziel</strong><small>Fortschritt anzeigen</small></div></div><div class="setting-inputs"><label>Aktuell<input type="number" min="0" max="1000000" id="subs-current" value="24"></label><label>Ziel<input type="number" min="1" max="1000000" id="subs-target" value="50"></label><button class="increment" id="test-sub" type="button" title="Test-Abo hinzufügen">+1</button></div></div><div class="settings-row"><div class="settings-label"><span class="settings-icon blue">↗</span><div><strong>Follower-Ziel</strong><small>Zählt aufwärts</small></div></div><div class="setting-inputs"><label>Aktuell<input type="number" min="0" max="1000000" id="followers-current" value="128"></label><label>Ziel<input type="number" min="1" max="1000000" id="followers-target" value="200"></label><button class="increment" id="test-follower" type="button" title="Test-Follow hinzufügen">+1</button></div></div></div><div class="divider"></div><div class="timer-settings"><div class="timer-settings-head"><div class="settings-label"><span class="settings-icon green">◷</span><div><strong>Stream-Timer</strong><small>Countdown mit Pause und Fortsetzen</small></div></div><strong id="timer-control-display">12:00:00</strong></div><div class="preset-row"><button type="button" class="preset active" data-hours="12">12 Stunden</button><button type="button" class="preset" data-hours="24">24 Stunden</button><button type="button" class="preset" data-hours="48">48 Stunden</button><label class="custom-hours">Eigen: <input type="number" min="1" max="240" id="custom-hours" placeholder="Std."></label></div><div class="timer-buttons"><button id="timer-toggle" class="btn btn-dark">▶ Timer starten</button><button id="timer-reset" class="btn btn-outline">↺ Zurücksetzen</button></div></div></section></div>
       </div>
 
-      <section class="card integration" id="integration"><div class="integration-copy"><span class="section-index">04 / EXPORT</span><h2>Bereit für deinen Stream?</h2><p>Kopiere einen transparenten Overlay-Link für OBS. Für automatisch gezählte Follows und Subs liegt außerdem ein separates StreamElements-Custom-Widget im Projekt.</p><div class="integration-note"><span>!</span><span><strong>Wichtig:</strong> Diese GitHub-Pages-Version speichert Einstellungen lokal. OBS übernimmt einen Konfigurations-Schnappschuss aus dem Link, aber nicht automatisch spätere Änderungen aus einem anderen Browser. Live-Follows und Subs laufen im separaten StreamElements-Widget.</span></div></div><div class="integration-actions"><button class="btn btn-outline" id="copy-subs">Abo-Overlay ↗</button><button class="btn btn-outline" id="copy-followers">Follower-Overlay ↗</button><button class="btn btn-outline" id="copy-timer">Timer-Overlay ↗</button><button class="btn btn-primary" id="copy-all">Alles zusammen ↗</button></div></section>
+      <section class="card singles-panel" id="single-widgets" aria-labelledby="single-widgets-title">
+<div class="card-head"><div><span class="section-index">04 / EINZEL-WIDGETS</span><h2 id="single-widgets-title">Jedes Widget einzeln speichern</h2><p>Abo-Ziel, Follower-Ziel und Timer getrennt gestalten und jeweils mit eigenem OBS-Link verwenden. Deine Einstellungen bleiben einzeln im Browser gespeichert.</p></div><span class="pill">3 einzelne Widgets</span></div>
+<div class="singles-grid"><article class="single-card" data-single-widget="subs">
+<div class="single-card-head"><span class="single-card-icon">✦</span><div><h3>Abo-Ziel</h3><p>Nur das Abo-Ziel als eigenes Widget</p></div></div>
+<div class="single-fields"><label>Aktuell<input type="number" min="0" max="1000000" data-sfield="current"></label><label>Ziel<input type="number" min="1" max="1000000" data-sfield="target"></label><label>Design<select data-sfield="style"><option value="neon">Neon</option><option value="glass">Glas</option><option value="fill">Fill</option><option value="sharp">Sharp</option><option value="outline">Outline</option><option value="image">Eigenes Bild</option></select></label><label>Akzentfarbe<input type="color" data-sfield="accent" value="#7863ee"></label></div>
+<p class="single-saved" data-saved-status aria-live="polite">Noch nicht gespeichert</p>
+<div class="single-buttons"><button type="button" class="btn btn-primary" data-single-action="save">Einzeln speichern</button><button type="button" class="btn btn-outline" data-single-action="copy">OBS-Link kopieren</button><button type="button" class="btn btn-outline" data-single-action="preview">Vorschau</button></div>
+</article>
+<article class="single-card" data-single-widget="followers">
+<div class="single-card-head"><span class="single-card-icon">↗</span><div><h3>Follower-Ziel</h3><p>Nur das Follower-Ziel als eigenes Widget</p></div></div>
+<div class="single-fields"><label>Aktuell<input type="number" min="0" max="1000000" data-sfield="current"></label><label>Ziel<input type="number" min="1" max="1000000" data-sfield="target"></label><label>Design<select data-sfield="style"><option value="neon">Neon</option><option value="glass">Glas</option><option value="fill">Fill</option><option value="sharp">Sharp</option><option value="outline">Outline</option><option value="image">Eigenes Bild</option></select></label><label>Akzentfarbe<input type="color" data-sfield="accent" value="#7863ee"></label></div>
+<p class="single-saved" data-saved-status aria-live="polite">Noch nicht gespeichert</p>
+<div class="single-buttons"><button type="button" class="btn btn-primary" data-single-action="save">Einzeln speichern</button><button type="button" class="btn btn-outline" data-single-action="copy">OBS-Link kopieren</button><button type="button" class="btn btn-outline" data-single-action="preview">Vorschau</button></div>
+</article>
+<article class="single-card" data-single-widget="timer">
+<div class="single-card-head"><span class="single-card-icon">◷</span><div><h3>Stream-Timer</h3><p>Nur den Timer als eigenes Widget</p></div></div>
+<div class="single-fields"><label class="single-full">Dauer in Stunden<input type="number" min="1" max="240" data-sfield="hours"></label><label>Design<select data-sfield="style"><option value="neon">Neon</option><option value="glass">Glas</option><option value="fill">Fill</option><option value="sharp">Sharp</option><option value="outline">Outline</option><option value="image">Eigenes Bild</option></select></label><label>Akzentfarbe<input type="color" data-sfield="accent" value="#7863ee"></label></div>
+<p class="single-saved" data-saved-status aria-live="polite">Noch nicht gespeichert</p>
+<div class="single-buttons"><button type="button" class="btn btn-primary" data-single-action="save">Einzeln speichern</button><button type="button" class="btn btn-outline" data-single-action="copy">OBS-Link kopieren</button><button type="button" class="btn btn-outline" data-single-action="preview">Vorschau</button></div>
+</article></div>
+<p class="singles-note">Hinweis: Die OBS-Links enthalten gespeicherte Momentaufnahmen. Spätere Änderungen musst du erneut speichern und den Link in OBS aktualisieren. Echte Twitch-Events benötigen weiterhin die separate StreamElements-Anbindung.</p>
+</section>
+<section class="card integration" id="integration"><div class="integration-copy"><span class="section-index">04 / EXPORT</span><h2>Bereit für deinen Stream?</h2><p>Kopiere einen transparenten Overlay-Link für OBS. Für automatisch gezählte Follows und Subs liegt außerdem ein separates StreamElements-Custom-Widget im Projekt.</p><div class="integration-note"><span>!</span><span><strong>Wichtig:</strong> Diese GitHub-Pages-Version speichert Einstellungen lokal. OBS übernimmt einen Konfigurations-Schnappschuss aus dem Link, aber nicht automatisch spätere Änderungen aus einem anderen Browser. Live-Follows und Subs laufen im separaten StreamElements-Widget.</span></div></div><div class="integration-actions"><button class="btn btn-outline" id="copy-subs">Abo-Overlay ↗</button><button class="btn btn-outline" id="copy-followers">Follower-Overlay ↗</button><button class="btn btn-outline" id="copy-timer">Timer-Overlay ↗</button><button class="btn btn-primary" id="copy-all">Alles zusammen ↗</button></div></section>
       <footer><span>SubBoost Studio © 2026</span><span>Made for better streams · v1.0</span></footer>
     </div>
   </main>
@@ -114,6 +137,146 @@
 <div id="obs-overlay-root" class="obs-root" hidden><div class="obs-content" id="obs-content"></div><div class="obs-interact" id="obs-interact"><button type="button" id="obs-start-pause">▶ Start / Pause</button><button type="button" id="obs-reset">↺ Reset</button></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>
+<style id="subboost-independent-widget-styles">
+.singles-panel{margin-top:22px}
+.singles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.single-card{min-width:0;background:#fafbff;border:1px solid #e4e8f1;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.single-card-head{display:flex;gap:10px;align-items:center}
+.single-card-icon{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:#eeeaff;color:#7667e9;font-size:21px}
+.single-card-head h3{font-size:15px;margin:0 0 3px;letter-spacing:-.3px}
+.single-card-head p{font-size:10px;line-height:1.5;color:#7a8599}
+.single-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.single-fields label{min-width:0;font-size:11px;font-weight:700;color:#59647a}
+.single-fields input:not([type=color]),.single-fields select{display:block;margin-top:6px;width:100%;min-width:0;height:38px;padding:8px;border:1px solid #dce2ed;background:#fff;color:#27354c;border-radius:8px;font-size:12px}
+.single-fields input[type=color]{display:block;cursor:pointer;margin-top:6px;width:100%;height:38px;padding:4px;border:1px solid #dce2ed;background:#fff;border-radius:8px}
+.single-full{grid-column:1/-1}
+.single-saved{font-size:10px;font-weight:700;line-height:1.5;color:#878fa3}
+.single-saved.is-saved{color:#25885c}
+.single-saved.is-edited{color:#ae7937}
+.single-buttons{display:grid;gap:8px;margin-top:auto}
+.single-buttons .btn{font-size:11px;padding:10px 7px;white-space:normal;min-height:36px}
+.singles-note{font-size:11px;line-height:1.6;color:#79869a;margin-top:16px}
+:root[data-theme="dark"] .single-card{background:#1a283c;border-color:#38465e}
+:root[data-theme="dark"] .single-card-head p,:root[data-theme="dark"] .singles-note{color:#a9b8ce}
+:root[data-theme="dark"] .single-card-icon{background:#382b5c;color:#c3afff}
+:root[data-theme="dark"] .single-fields label{color:#b9c5da}
+:root[data-theme="dark"] .single-fields input:not([type=color]),:root[data-theme="dark"] .single-fields select,:root[data-theme="dark"] .single-fields input[type=color]{background:#101a2d;color:#f1f5ff;border-color:#43516b}
+:root[data-theme="dark"] .single-saved{color:#aab6c7}
+:root[data-theme="dark"] .single-saved.is-saved{color:#7cdbaf}
+:root[data-theme="dark"] .single-saved.is-edited{color:#f0bd7e}
+@media(max-width:1100px){.singles-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.singles-grid{grid-template-columns:1fr}.singles-panel .card-head{flex-direction:column}}
+</style>
+<script id="subboost-independent-widget-controller">
+(()=>{
+  'use strict';
+  // The studio dashboard remains independent: each saved widget has its own data and appearance.
+  if(new URLSearchParams(location.search).has('overlay'))return;
+  const storageKey='subboost-studio-independent-widgets-v1';
+  const dashboardKey='subboost-studio-v1';
+  const kinds=['subs','followers','timer'];
+  const cards=[...document.querySelectorAll('[data-single-widget]')];
+  const styles=['neon','glass','fill','sharp','outline','image'];
+  let saved={};
+  try{
+    const val=JSON.parse(localStorage.getItem(storageKey)||'{}');
+    if(val&&typeof val==='object')saved=val;
+  }catch(_){}
+  const number=(v,min,max,fallback)=>{const n=Number(v);return Number.isFinite(n)?Math.min(max,Math.max(min,n)):fallback};
+  function dashboard(){
+    try{return JSON.parse(localStorage.getItem(dashboardKey)||'{}')||{}}catch(_){return{}}
+  }
+  function initial(kind){
+    const s=dashboard();
+    const common={style:styles.includes(s.style)?s.style:'neon',accent:/^#[a-f0-9]{6}$/i.test(s.accent||'')?s.accent:'#7863ee'};
+    if(kind==='subs')return {...common,current:number(s.subs,0,1000000,24),target:number(s.subsTarget,1,1000000,50)};
+    if(kind==='followers')return {...common,current:number(s.followers,0,1000000,128),target:number(s.followersTarget,1,1000000,200)};
+    return {...common,hours:number((s.durationMs||43200000)/3600000,1,240,12)};
+  }
+  function normalize(kind,raw){
+    const def=initial(kind);
+    const value=raw&&typeof raw==='object'?raw:{};
+    const cfg={style:styles.includes(value.style)?value.style:def.style,accent:/^#[a-f0-9]{6}$/i.test(value.accent||'')?value.accent:def.accent};
+    if(kind==='timer')return {...cfg,hours:number(value.hours,1,240,def.hours)};
+    return {...cfg,current:number(value.current,0,1000000,def.current),target:number(value.target,1,1000000,def.target)};
+  }
+  function fields(card){
+    const data={};
+    card.querySelectorAll('[data-sfield]').forEach(el=>data[el.dataset.sfield]=el.value);
+    return normalize(card.dataset.singleWidget,data);
+  }
+  function setFields(card,cfg){
+    card.querySelectorAll('[data-sfield]').forEach(el=>{
+      if(Object.prototype.hasOwnProperty.call(cfg,el.dataset.sfield))el.value=cfg[el.dataset.sfield];
+    });
+  }
+  function same(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+  function refreshStatus(card){
+    const kind=card.dataset.singleWidget;
+    const status=card.querySelector('[data-saved-status]');
+    status.classList.remove('is-edited','is-saved');
+    if(!saved[kind]){status.textContent='Noch nicht gespeichert';return}
+    if(same(fields(card),normalize(kind,saved[kind]))){
+      status.classList.add('is-saved');
+      status.textContent='✓ Dieses Widget ist gespeichert';
+    }else{
+      status.classList.add('is-edited');
+      status.textContent='Nicht gespeicherte Änderungen';
+    }
+  }
+  function buildUrl(kind,cfg){
+    const s=dashboard();
+    const values={
+      style:cfg.style,accent:cfg.accent,title:String(s.title||'STREAM GOALS').slice(0,32),
+      subs:number(s.subs,0,1000000,24),subsTarget:number(s.subsTarget,1,1000000,50),
+      followers:number(s.followers,0,1000000,128),followersTarget:number(s.followersTarget,1,1000000,200),
+      durationMs:43200000,remainingMs:43200000,running:false,startedAt:null,
+      bgUrl:/^https?:\/\//i.test(s.bgUrl||'')?String(s.bgUrl).slice(0,1800):'',bgData:''
+    };
+    if(kind==='subs'){values.subs=cfg.current;values.subsTarget=cfg.target}
+    if(kind==='followers'){values.followers=cfg.current;values.followersTarget=cfg.target}
+    if(kind==='timer'){values.durationMs=cfg.hours*3600000;values.remainingMs=values.durationMs}
+    const url=new URL(location.href);
+    url.search='';url.hash='';
+    url.searchParams.set('overlay',kind);
+    url.searchParams.set('config',JSON.stringify(values));
+    return url.toString();
+  }
+  function notice(message){
+    const toast=document.getElementById('toast');
+    if(!toast)return;
+    toast.textContent=message;
+    toast.classList.add('show');
+    clearTimeout(notice.timeout);
+    notice.timeout=setTimeout(()=>toast.classList.remove('show'),3200);
+  }
+  for(const card of cards){
+    const kind=card.dataset.singleWidget;
+    if(!kinds.includes(kind))continue;
+    setFields(card,normalize(kind,saved[kind]||{}));
+    refreshStatus(card);
+    card.querySelectorAll('[data-sfield]').forEach(el=>el.addEventListener('input',()=>refreshStatus(card)));
+    card.querySelector('[data-single-action="save"]').addEventListener('click',()=>{
+      saved[kind]=fields(card);
+      try{localStorage.setItem(storageKey,JSON.stringify(saved));refreshStatus(card);notice('Widget einzeln gespeichert.')}catch(_){notice('Speichern nicht möglich: Browserspeicher prüfen.')}
+    });
+    card.querySelector('[data-single-action="copy"]').addEventListener('click',async()=>{
+      if(!saved[kind]||!same(fields(card),normalize(kind,saved[kind]))){
+        notice('Bitte dieses Widget zuerst speichern.');
+        return;
+      }
+      const url=buildUrl(kind,normalize(kind,saved[kind]));
+      try{await navigator.clipboard.writeText(url);notice('Einzel-OBS-Link kopiert.')}
+      catch(_){window.prompt('Einzel-OBS-Link kopieren:',url)}
+    });
+    card.querySelector('[data-single-action="preview"]').addEventListener('click',()=>{
+      const cfg=fields(card);
+      const url=buildUrl(kind,cfg);
+      window.open(url,'_blank','noopener,noreferrer');
+    });
+  }
+})();
+</script>
 <script id="subboost-theme-controller">
 (()=>{
   if(new URLSearchParams(location.search).has('overlay'))return;
