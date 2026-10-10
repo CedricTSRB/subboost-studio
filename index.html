@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="description" content="SubBoost Studio – professionelle Twitch-Overlay-Gestaltung für Abo-Ziele, Follower-Ziele und Stream-Timer.">
+  <title>SubBoost Studio · Overlay Designer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#studio" aria-label="SubBoost Studio Startseite"><span class="brand-mark">S<span class="brand-spark">✦</span></span><span><b>SubBoost</b><small>STUDIO</small></span></a>
+    <div class="nav-caption">WORKSPACE</div>
+    <nav aria-label="Hauptnavigation">
+      <a href="#studio" class="nav-link active" data-nav="studio"><span class="nav-ico">▦</span> Overlay Studio</a>
+      <a href="#designs" class="nav-link" data-nav="designs"><span class="nav-ico">◈</span> Design-Bibliothek</a>
+      <a href="#goals" class="nav-link" data-nav="goals"><span class="nav-ico">◫</span> Goals & Timer</a>
+      <a href="#integration" class="nav-link" data-nav="integration"><span class="nav-ico">⇄</span> OBS & Integration</a>
+    </nav>
+    <div class="side-bottom">
+      <div class="status-card"><span class="status-dot"></span><div><b>Studio bereit</b><small>Lokale Vorschau · ohne Login</small></div></div>
+      <div class="side-foot">V1.0 • SubBoost Studio<br><span>Designed for creators</span></div>
+    </div>
+  </aside>
+
+  <main class="main" id="studio">
+    <header class="topbar"><div class="crumb"><span>Workspace</span><span class="slash">/</span><strong>Overlay Studio</strong></div><div class="top-actions"><span class="autosaved"><span class="save-dot"></span> Einstellungen lokal gespeichert</span><button class="btn btn-small btn-outline" id="reset-all">Zurücksetzen</button></div></header>
+    <div class="page">
+      <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CREATOR TOOLS <span class="eyebrow-sep">/</span> DESIGN STUDIO</div><h1>Dein Stream. <em>Dein Design.</em></h1><p>Gestalte deine Goals, wähle einen Stil und sieh dein Overlay direkt in der Vorschau.</p></div><div class="header-badge"><span>✦</span> Neues Studio-Design</div></div>
+
+      <div class="summary-grid">
+        <div class="summary"><div class="summary-top"><span class="summary-icon violet">✧</span><span class="summary-tag">ABO-ZIEL</span></div><div class="summary-value" id="sum-subs">24 <span>/ 50</span></div><div class="summary-sub">Abos auf dem Weg zum Ziel</div><div class="summary-line"><i id="sum-subs-line"></i></div></div>
+        <div class="summary"><div class="summary-top"><span class="summary-icon blue">↗</span><span class="summary-tag">FOLLOWER-ZIEL</span></div><div class="summary-value" id="sum-followers">128 <span>/ 200</span></div><div class="summary-sub">Follower auf dem Weg zum Ziel</div><div class="summary-line blue-line"><i id="sum-followers-line"></i></div></div>
+        <div class="summary"><div class="summary-top"><span class="summary-icon green">◷</span><span class="summary-tag">STREAM-TIMER</span></div><div class="summary-value" id="sum-timer">12:00:00</div><div class="summary-sub" id="sum-timer-status">Bereit zum Starten</div><div class="summary-line green-line"><i id="sum-timer-line"></i></div></div>
+      </div>
+
+      <div class="studio-grid">
+        <div class="left-stack">
+          <section class="card" id="designs"><div class="card-head"><div><span class="section-index">01 / DESIGN</span><h2>Wähle deinen Stil</h2><p>Sechs unterschiedliche Looks, nicht nur sechs Farben.</p></div><div class="pill">6 Designs</div></div><div class="styles-grid" id="styles-grid">
+            <button type="button" class="style-tile selected" data-style="neon"><span class="style-art art-neon"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Neon <span class="select-check">✓</span></span><span class="style-desc">Leuchtende Akzente</span></button>
+            <button type="button" class="style-tile" data-style="glass"><span class="style-art art-glass"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Glas <span class="select-check">✓</span></span><span class="style-desc">Frosted Glass</span></button>
+            <button type="button" class="style-tile" data-style="fill"><span class="style-art art-fill"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Fill <span class="select-check">✓</span></span><span class="style-desc">Kräftige Flächen</span></button>
+            <button type="button" class="style-tile" data-style="sharp"><span class="style-art art-sharp"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Sharp <span class="select-check">✓</span></span><span class="style-desc">Präzise Kanten</span></button>
+            <button type="button" class="style-tile" data-style="outline"><span class="style-art art-outline"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Outline <span class="select-check">✓</span></span><span class="style-desc">Clean & minimal</span></button>
+            <button type="button" class="style-tile" data-style="image"><span class="style-art art-image"><i></i><strong>GOAL</strong><small>34 / 50</small><b></b></span><span class="style-label">Eigenes Bild <span class="select-check">✓</span></span><span class="style-desc">Dein Hintergrund</span></button>
+          </div></section>
+          <section class="card personalization"><div class="card-head tight"><div><span class="section-index">02 / ANPASSEN</span><h2>Feinschliff</h2></div></div><div class="colors-row"><div><label class="field-label" for="accent">Akzentfarbe</label><div class="color-input"><input id="accent" type="color" value="#7863ee"><span id="hex-label">#7863EE</span></div></div><div><label class="field-label" for="label-name">Overlay-Titel</label><input id="label-name" type="text" maxlength="32" value="STREAM GOALS" placeholder="STREAM GOALS"></div></div><div class="image-field"><label class="field-label" for="background-url">Hintergrundbild <span>(für Stil „Eigenes Bild“)</span></label><input id="background-url" type="url" placeholder="https://.../mein-bild.jpg"><label class="upload-label" for="background-file"><span>↑</span> Oder Bild für lokale Vorschau auswählen <input type="file" id="background-file" accept="image/*"></label><small class="hint">Ein lokal ausgewähltes Bild bleibt in deinem Browser. Für den OBS-Link eine öffentliche Bild-URL verwenden.</small></div></section>
+        </div>
+
+        <div class="right-stack"><section class="card preview-card"><div class="card-head preview-title"><div><span class="section-index">LIVE EDITOR</span><h2>Overlay-Vorschau <span class="live-pill"><i></i> VORSCHAU</span></h2><p>Änderungen siehst du sofort – ohne Stream.</p></div><button class="icon-btn" title="Vollbildvorschau" id="open-preview" aria-label="Vollbildvorschau öffnen">⤢</button></div><div class="preview-stage"><div class="stage-top"><span><i class="stage-dot"></i> 1920 × 1080</span><span>OBS · Browser-Quelle</span></div><div class="preview-inner"><div id="overlay-preview" class="overlay-content style-neon"><div class="preview-heading"><span id="preview-title">STREAM GOALS</span><span class="tiny-live"><span></span> LIVE LOOK</span></div><div class="goal-card subs-card"><div class="goal-top"><span>✦ <span>Abo-Ziel</span></span><strong id="preview-subs">24 <small>/ 50</small></strong></div><div class="bar"><div class="bar-fill" id="subs-progress"></div></div></div><div class="goal-card followers-card"><div class="goal-top"><span>↗ <span>Follower-Ziel</span></span><strong id="preview-followers">128 <small>/ 200</small></strong></div><div class="bar"><div class="bar-fill" id="followers-progress"></div></div></div><div class="goal-card timer-card"><div class="timer-card-content"><div><span class="timer-label">◷ STREAM-TIMER</span><div class="timer-subline" id="timer-state-label">Bereit zum Starten</div></div><strong id="preview-timer">12:00:00</strong></div></div></div></div><div class="stage-bottom">Vorschau · transparente Overlay-Fläche</div></div><div class="preview-footer"><div><span class="preview-foot-icon">ⓘ</span> Zähler sind aktuell Testwerte; Live-Daten kommen über StreamElements.</div><button class="btn btn-primary" id="copy-overlay-all">OBS-Link kopieren <span>↗</span></button></div></section>
+
+        <section class="card controls-card" id="goals"><div class="card-head tight"><div><span class="section-index">03 / GOALS & TIMER</span><h2>Ziele einstellen</h2><p>Teste neue Subs und Follows direkt im Studio.</p></div></div><div class="goals-settings"><div class="settings-row"><div class="settings-label"><span class="settings-icon violet">✧</span><div><strong>Abo-Ziel</strong><small>Fortschritt anzeigen</small></div></div><div class="setting-inputs"><label>Aktuell<input type="number" min="0" max="1000000" id="subs-current" value="24"></label><label>Ziel<input type="number" min="1" max="1000000" id="subs-target" value="50"></label><button class="increment" id="test-sub" type="button" title="Test-Abo hinzufügen">+1</button></div></div><div class="settings-row"><div class="settings-label"><span class="settings-icon blue">↗</span><div><strong>Follower-Ziel</strong><small>Zählt aufwärts</small></div></div><div class="setting-inputs"><label>Aktuell<input type="number" min="0" max="1000000" id="followers-current" value="128"></label><label>Ziel<input type="number" min="1" max="1000000" id="followers-target" value="200"></label><button class="increment" id="test-follower" type="button" title="Test-Follow hinzufügen">+1</button></div></div></div><div class="divider"></div><div class="timer-settings"><div class="timer-settings-head"><div class="settings-label"><span class="settings-icon green">◷</span><div><strong>Stream-Timer</strong><small>Countdown mit Pause und Fortsetzen</small></div></div><strong id="timer-control-display">12:00:00</strong></div><div class="preset-row"><button type="button" class="preset active" data-hours="12">12 Stunden</button><button type="button" class="preset" data-hours="24">24 Stunden</button><button type="button" class="preset" data-hours="48">48 Stunden</button><label class="custom-hours">Eigen: <input type="number" min="1" max="240" id="custom-hours" placeholder="Std."></label></div><div class="timer-buttons"><button id="timer-toggle" class="btn btn-dark">▶ Timer starten</button><button id="timer-reset" class="btn btn-outline">↺ Zurücksetzen</button></div></div></section></div>
+      </div>
+
+      <section class="card integration" id="integration"><div class="integration-copy"><span class="section-index">04 / EXPORT</span><h2>Bereit für deinen Stream?</h2><p>Kopiere einen transparenten Overlay-Link für OBS. Für automatisch gezählte Follows und Subs liegt außerdem ein separates StreamElements-Custom-Widget im Projekt.</p><div class="integration-note"><span>!</span><span><strong>Wichtig:</strong> Diese GitHub-Pages-Version speichert Einstellungen lokal. OBS übernimmt einen Konfigurations-Schnappschuss aus dem Link, aber nicht automatisch spätere Änderungen aus einem anderen Browser. Live-Follows und Subs laufen im separaten StreamElements-Widget.</span></div></div><div class="integration-actions"><button class="btn btn-outline" id="copy-subs">Abo-Overlay ↗</button><button class="btn btn-outline" id="copy-followers">Follower-Overlay ↗</button><button class="btn btn-outline" id="copy-timer">Timer-Overlay ↗</button><button class="btn btn-primary" id="copy-all">Alles zusammen ↗</button></div></section>
+      <footer><span>SubBoost Studio © 2026</span><span>Made for better streams · v1.0</span></footer>
+    </div>
+  </main>
+</div>
+<div id="obs-overlay-root" class="obs-root" hidden><div class="obs-content" id="obs-content"></div><div class="obs-interact" id="obs-interact"><button type="button" id="obs-start-pause">▶ Start / Pause</button><button type="button" id="obs-reset">↺ Reset</button></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
